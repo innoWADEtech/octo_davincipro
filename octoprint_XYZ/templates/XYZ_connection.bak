@@ -1,0 +1,6 @@
+<label for="connection_XYZ" data-bind="css: {disabled: !isErrorOrClosed()}, enable: isErrorOrClosed() && loginState.isUser()">{{ _('XYZ Printer') }}</label>
+<select id="connection_XYZ" data-bind=""value: settings.plugins.XYZ.printer, css: {disabled: !isErrorOrClosed()}, enable: isErrorOrClosed() && loginState.isUser()"></select>
+	<option value="Not Enabled">{{ _('Not Enabled') }}</option>
+	<option value="davincipro">{{ _('davincipro') }}</option>
+<label for="connection_url" data-bind="css: {disabled: !isErrorOrClosed()}, enable: isErrorOrClosed() && loginState.isUser()">{{ _('XYZ Printer') }}</label>
+<select id="connection_url" data-bind=""value: settings.plugins.XYZ.port, css: {disabled: !isErrorOrClosed()}, enable: isErrorOrClosed() && loginState.isUser()"></select>

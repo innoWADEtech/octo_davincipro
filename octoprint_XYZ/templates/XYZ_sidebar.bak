@@ -1,0 +1,6 @@
+<div id="gcode_bar">
+    <div class="input-append">
+        <input type="text" autocomplete="off" id="command-search" data-bind="enable: terminal.isOperational(), textInput: commandString, event: { keydown: handleKeyDown, keyup: handleKeyUp }" placeholder="Upload to SD & Print"/>
+        <button type="submit" class="btn" data-bind="enable: terminal.isOperational(), click: sendCommand">Print</button>
+    </div>
+</div>

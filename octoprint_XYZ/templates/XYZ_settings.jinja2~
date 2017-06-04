@@ -1,0 +1,54 @@
+<form class="form-horizontal">
+    <div class="control-group">
+    	  <h2>XYZ Printer Configuration</h2>
+        <label class="control-label">Port/URL:</label>
+        <div class="controls">
+            <input type="text" class="input-block-level" data-bind="value: settings.plugins.XYZ.port">
+        </div>
+			<label class="control-label">Printer:</label>
+         <div class="controls" data-toggle="tooltip" title="{{ _('Choose Printer Model') }}">
+              <select data-bind="value: settings.plugins.XYZ.printer">
+                    <option value="Not Enabled">{{ _('Not Enabled') }}</option>
+                    <option value="daVinciAW10">{{ _('davincipro') }}</option>
+                    <option value="daVinciJR10">{{ _('davincijr') }}</option>
+                    <option value="daVinciF10">{{ _('davinci1.0') }}</option>
+                </select>
+         </div>
+         <label class="control-label">{{_('Serial Number') }}:</label>
+         <div class= "controls">
+         	<label class="input-block-level" data-bind="text: settings.plugins.XYZ.Serial_number"></label>
+         </div>
+         <label class="control-label">{{_('Model Name') }}:</label>
+         <div class= "controls">
+         	<label class="input-block-level" data-bind="text: settings.plugins.XYZ.Model_name"></label>
+         </div>
+         <label class="control-label">{{_('Extruder Life') }}:</label>
+         <div class= "controls">
+         	<label class="input-block-level" data-bind="text: settings.plugins.XYZ.Life_extruder"></label>
+         </div>
+         <label class="control-label">{{_('Machine Life') }}:</label>
+         <div class= "controls">
+         	<label class="input-block-level" data-bind="text: settings.plugins.XYZ.Life_machine"></label>
+         </div>
+         <label class="control-label">{{_('Filament Serial Number') }}:</label>
+         <div class= "controls">
+         	<label class="input-block-level" data-bind="text: settings.plugins.XYZ.Filament_serial_number"></label>
+         </div>
+         <label class="control-label">{{_('Version') }}:</label>
+         <div class= "controls">
+         	<label class="input-block-level" data-bind="text: settings.plugins.XYZ.Version"></label>
+         </div>
+         <label class="control-label">{{_('Firmware') }}:</label>
+         <div class= "controls">
+         	<label class="input-block-level" data-bind="text: settings.plugins.XYZ.Firmware"></label>
+         </div>
+         <label class="control-label">{{_('Extruder Information') }}:</label>
+         <div class= "controls">
+         	<label class="input-block-level" data-bind="text: settings.plugins.XYZ.Extruder_info"></label>
+         </div>
+         <label class="control-label">{{_('MAC Address') }}:</label>
+         <div class= "controls">
+         	<label class="input-block-level" data-bind="text: settings.plugins.XYZ.MAC"></label>
+         </div>
+    </div>
+</form>
