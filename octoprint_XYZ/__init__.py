@@ -271,10 +271,16 @@ class XyzPlugin(octoprint.plugin.StartupPlugin,
 ; threads = 1
 M107
 M108
+M104 {ext}
+M190 {bed}
+M109 {ext}
+M191
 """
-        footer = "M107\n"
+        footer = "M107\nM104 S0\n"
         with open (settings().getBaseFolder("uploads") +"/" + name,'r') as f:
                 data = f.read()
+        bed = ""
+        ext = ""
         code = []
         layers = 0
         lines = data.split('\n')
@@ -287,6 +293,19 @@ M108
                 continue
             elif line.startswith("M108"):
                 continue
+            elif line.startswith("M104"):
+                #ext = line[5:9]
+                print ext
+                continue
+            elif line.startswith("M109"):
+                ext = line[5:9]
+                print ext
+                continue
+            elif line.startswith("M190"):
+                bed = line[5:9]
+                continue
+            elif line.startswith("M191"):
+                continue
             elif line.startswith(" "):
                 continue
             elif "Z" in line:
@@ -295,6 +314,8 @@ M108
         coded = ''.join(code)
         
         meta = {}
+        meta['ext'] = ext
+        meta['bed'] = bed
         meta['filename'] = name
         meta['time'] = analysis['estimatedPrintTime']
         meta['machine'] = settings().get(['plugins','XYZ','printer'])
