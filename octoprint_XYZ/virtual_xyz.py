@@ -188,8 +188,21 @@ class VirtualPrinter(object):
             self.send("Done printing file\n")
             #self.sendOk()
             self.printing = False
+        elif self.status['Printer status status'] == 9509:
+            #self.send("SD printing byte %d/%d" %
+                       #(self.status['File Position'], self.file3wSize)) 
+            self.send("Done printing file\n")
+            #self.sendOk()
+            self.printing = False
+        elif self.status['Printer status status'] == 9506:
+            #self.send("SD printing byte %d/%d" %
+                       #(self.status['File Position'], self.file3wSize)) 
+            self.send("Done printing file\n")
+            #self.sendOk()
+            self.printing = False
         else:
-            self.send("Not SD printing")
+            print ("hello")
+            #self.send("Not SD printing")
     #Temperature
     def temp(self):
         self.check_status()
